@@ -1,0 +1,18 @@
+ALL = $(basename $(wildcard *.c))
+FLAGS = -Wextra 
+COMP = gcc
+
+all:
+	@for file in $(ALL) ; do \
+		$(COMP) $(FLAGS) $$file.c -o $$file ; \
+	done
+
+.PHONY: $(ALL)
+$(ALL):
+	@$(COMP) $(FLAGS) $@.c -o $@
+
+cleanall:
+	@for file in $(ALL) ; do \
+		rm -f $$file ; \
+	done
+
