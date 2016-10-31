@@ -1,7 +1,7 @@
-EXT = c
+EXT= rs
 ALL = $(basename $(wildcard *.$(EXT)))
-FLAGS = -Wextra
-COMP = gcc
+FLAGS =
+COMP = rustc
 
 all:
 	@for file in $(ALL) ; do \
