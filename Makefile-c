@@ -5,12 +5,12 @@ COMP = gcc
 
 all:
 	@for file in $(ALL) ; do \
-		$(COMP) $(FLAGS) $$file.$(EXT) -o $$file ; \
+		$(COMP) $$file.$(EXT) -o $$file $(FLAGS) ; \
 	done
 
 .PHONY: $(ALL)
 $(ALL):
-	@$(COMP) $(FLAGS) $@.$(EXT) -o $@
+	@$(COMP) $@.$(EXT) -o $@ $(FLAGS)
 
 cleanall:
 	@for file in $(ALL) ; do \
